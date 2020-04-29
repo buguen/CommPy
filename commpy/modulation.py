@@ -141,9 +141,9 @@ class Modem:
 
         return demod_bits
 
-    def plot_constellation(self):
+    def plot_constellation(self,**kwargs):
         """ Plot the constellation """
-        plt.scatter(self.constellation.real, self.constellation.imag)
+        plt.scatter(self.constellation.real, self.constellation.imag,**kwargs)
 
         for symb in self.constellation:
             plt.text(symb.real + .2, symb.imag, self.demodulate(symb, 'hard'))

@@ -70,6 +70,12 @@ class Modem:
 
         self.constellation = constellation
 
+    def __repr__(self):
+        s = s + str(self.num_bits_symbol)+'\n'
+        s = s + str(self.m)+'\n'
+        s = s + str(self.constellation)+'\n'
+        return s
+
     def modulate(self, input_bits):
         """ Modulate (map) an array of bits to constellation symbols.
 

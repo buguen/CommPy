@@ -152,6 +152,9 @@ class Modem:
         plt.title('Constellation')
         plt.grid()
         plt.show()
+        fig = plt.gcf()
+        ax = plt.gca()
+        return(fig,ax)
 
     @property
     def constellation(self):

@@ -71,7 +71,6 @@ class Modem:
         self.constellation = constellation
 
     def __repr__(self):
-        s = s + str(self.num_bits_symbol)+'\n'
         s = s + str(self.m)+'\n'
         s = s + str(self.constellation)+'\n'
         return s
@@ -252,13 +251,10 @@ class QAMModem(Modem):
         def _constellation_symbol(i):
             return (2 * i[0] - 1) + (2 * i[1] - 1) * (1j)
 
-        assert m-np.sqrt(m).astype(int)**2==0
         mapping_array = arange(1, sqrt(m) + 1) - (sqrt(m) / 2)
         self.constellation = list(map(_constellation_symbol,
                                       list(product(mapping_array, repeat=2))))
 
-    def __repr__(self):
-        return Modem(self).__repr__()
 
 def ofdm_tx(x, nfft, nsc, cp_length):
     """ OFDM Transmit signal generation """

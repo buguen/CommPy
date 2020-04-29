@@ -246,6 +246,7 @@ class QAMModem(Modem):
         def _constellation_symbol(i):
             return (2 * i[0] - 1) + (2 * i[1] - 1) * (1j)
 
+        assert m-np.sqrt(m).astype(int)**2==0
         mapping_array = arange(1, sqrt(m) + 1) - (sqrt(m) / 2)
         self.constellation = list(map(_constellation_symbol,
                                       list(product(mapping_array, repeat=2))))

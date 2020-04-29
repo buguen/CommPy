@@ -71,7 +71,7 @@ class Modem:
         self.constellation = constellation
 
     def __repr__(self):
-        s = s + str(self.m)+'\n'
+        s = str(self.m)+'\n'
         s = s + str(self.constellation)+'\n'
         return s
 

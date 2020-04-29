@@ -128,7 +128,8 @@ class Modem:
                 for bit_index in arange(self.num_bits_symbol):
                     llr_num = 0
                     llr_den = 0
-                    for const_index in self.symbol_mapping:
+                    #for const_index in self.symbol_mapping:
+                    for const_index in range(0,len(self._constellation)):
                         if (const_index >> bit_index) & 1:
                             llr_num = llr_num + exp(
                                 (-abs(current_symbol - self._constellation[const_index]) ** 2) / noise_var)

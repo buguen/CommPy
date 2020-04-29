@@ -48,7 +48,7 @@ def dec2bitarray(in_number, bit_width):
     """
 
     binary_words = vectorized_binary_repr(np.array(in_number, ndmin=1), bit_width)
-    return np.fromiter(it.chain.from_iterable(binary_words), dtype=np.int8)
+    return np.fromiter(it.chain.from_iterable(binary_words), dtype=np.int16)
 
 
 def bitarray2dec(in_bitarray):
